@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Naples\' Heart</string>
+    <string name="recommendation_title_1">Vincenzo Capuano</string>
+    <string name="recommendation_description_1">Benvenuti nel cuore della tradizione culinaria napoletana, dove l\'arte della pizza incontra l\'eccellenza. La nostra catena di pizzerie è stata fondata da uno dei migliori pizzaioli del mondo, Vincenzo Capuano. Scopri la magia delle nostre pizze autentiche, preparate con passione e ingredienti di prima qualità.</string>
+    <string name="recommendation_location_1">Naples</string>
+    <string name="pizza_label">Pizza</string>
+    <string name="monument_label">Monuments</string>
+    <string name="aperitif_label">Aperitif</string>
+    <string name="naples_heart_logo">Cuore di Napoli</string>
+</resources>

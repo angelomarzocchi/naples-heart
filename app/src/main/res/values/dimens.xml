@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="drawewr_width">240dp</dimen>
+    <dimen name="naples_heart_size">48dp</dimen>
+    <dimen name="naples_heart_logo_text_size">24.sp</dimen>
+    <dimen name="drawer_padding_content">12.dp</dimen>
+    <dimen name="header_padding_size">16dp</dimen>
+    <dimen name="drawer_padding_header">16dp</dimen>
+    <dimen name="topbar_logo_size">64dp</dimen>
+    <dimen name="topbar_logo_padding_start">4dp</dimen>
+    <dimen name="list_item_inner_padding">24dp</dimen>
+    <dimen name="card_list_vertical_spacing">8dp</dimen>
+    <dimen name="topbar_padding_vertical">8dp</dimen>
+</resources>
