@@ -3,6 +3,7 @@ package com.example.naplesheart.ui
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -11,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.material3.Icon
@@ -76,7 +78,10 @@ fun NaplesHeartHomeScreen(
     if(navigationType == NaplesHeartNavigationType.PERMANENT_NAVIGATION_DRAWER) {
         PermanentNavigationDrawer(
             drawerContent = {
-                PermanentDrawerSheet(Modifier.width(dimensionResource(id = R.dimen.drawewr_width))) {
+                PermanentDrawerSheet(
+                    Modifier.width(dimensionResource(id = R.dimen.drawewr_width)),
+                    drawerContainerColor = MaterialTheme.colorScheme.inverseSurface
+                ) {
                     NavigationDrawerContent(
                         currentRecommendationCategory = uiState.currentRecommendationCategory,
                         onTabPressed = onTabPressed,
@@ -114,7 +119,7 @@ fun NaplesHeartHomeScreen(
                 modifier = modifier
             )
         } else {
-            NaplesHeartDetailScreen(
+            NaplesHeartDetailsScreen(
                 uiState = uiState,
                 onBackPressed = { onDetailScreenBackPressed() },
                 isFullScreen = true,
@@ -138,38 +143,56 @@ private fun NaplesHeartAppContent(
     navigationItemContentList: List<NavigationItemContent>,
     modifier: Modifier = Modifier
 ) {
-    Row(modifier = modifier) {
-        AnimatedVisibility(visible = navigationType == NaplesHeartNavigationType.NAVIGATION_RAIL) {
-            NaplesHeartNavigationRail(
-                currentRecommendationCategory = uiState.currentRecommendationCategory,
-                onTabPressed = onTabPressed,
-                navigationItemContentList = navigationItemContentList,
-            )
-        }
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .background(MaterialTheme.colorScheme.surface)
-        ) {
-            if(contentType == NaplesHeartContentType.LIST_AND_DETAIL) {
 
-            } else {
-
+    Box(modifier = modifier) {
+        Row(modifier = Modifier.fillMaxSize()) {
+            AnimatedVisibility(visible = navigationType == NaplesHeartNavigationType.NAVIGATION_RAIL) {
+                NaplesHeartNavigationRail(
+                    currentRecommendationCategory = uiState.currentRecommendationCategory,
+                    onTabPressed = onTabPressed,
+                    navigationItemContentList = navigationItemContentList,
+                )
+            }
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .background(MaterialTheme.colorScheme.inverseOnSurface)
+            ) {
+                if (contentType == NaplesHeartContentType.LIST_AND_DETAIL) {
+                    NaplesHeartListAndDetailContent(
+                        uiState = uiState,
+                        onRecommendationPressed = onRecommendationPressed,
+                        modifier = Modifier
+                            .statusBarsPadding()
+                            .weight(1f)
+                    )
+                } else {
+                    NaplesHeartListOnlyContent(
+                        uiState = uiState,
+                        onCardClick = onRecommendationPressed,
+                        modifier = Modifier
+                            .weight(1f)
+                            .padding(horizontal = dimensionResource(R.dimen.recommendation_list_only_horizontal_padding))
+                    )
+                }
+                AnimatedVisibility(
+                    visible = navigationType == NaplesHeartNavigationType.BOTTOM_NAVIGATION
+                ) {
+                    NaplesHeartBottomNavigationBar(
+                        currentRecommendationCategory = uiState.currentRecommendationCategory,
+                        onTabPressed = onTabPressed,
+                        navigationItemContentList = navigationItemContentList,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                    )
+                }
             }
         }
     }
 
 }
 
-@Composable
-private fun NaplesHeartDetailScreen(
-    uiState: NaplesHeartUiState,
-    onBackPressed: () -> Unit,
-    isFullScreen: Boolean,
-    modifier: Modifier = Modifier
-) {
 
-}
 
 
 @Composable

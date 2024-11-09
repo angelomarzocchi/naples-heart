@@ -5,6 +5,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.naplesheart.data.Recommendation
+import com.example.naplesheart.data.RecommendationCategory
 import com.example.naplesheart.ui.utils.NaplesHeartContentType
 import com.example.naplesheart.ui.utils.NaplesHeartNavigationType
 
@@ -38,5 +40,24 @@ fun NaplesHeartApp(
             contentType = NaplesHeartContentType.LIST_ONLY
         }
     }
+
+    NaplesHeartHomeScreen(
+        navigationType = navigationType,
+        contentType = contentType,
+        uiState = uiState,
+        onTabPressed = { recommendationCategory: RecommendationCategory ->
+            viewModel.updateCurrentCategory(category = recommendationCategory)
+            viewModel.resetHomeScreenStates()
+        },
+        onRecommendationPressed = {recommendation: Recommendation ->
+            viewModel.updateDetailsScreenStates(
+                recommendation = recommendation
+            )
+        },
+        onDetailScreenBackPressed = {
+            viewModel.resetHomeScreenStates()
+        },
+        modifier = modifier
+    )
 
 }

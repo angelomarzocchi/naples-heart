@@ -7,4 +7,6 @@
     <string name="monument_label">Monuments</string>
     <string name="aperitif_label">Aperitif</string>
     <string name="naples_heart_logo">Cuore di Napoli</string>
+    <string name="reserve">Reserve Table\n</string>
+    <string name="navigation_back">Back</string>
 </resources>

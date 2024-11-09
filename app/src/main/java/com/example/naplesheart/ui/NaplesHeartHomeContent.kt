@@ -1,15 +1,22 @@
 package com.example.naplesheart.ui
 
 
+import android.app.Activity
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.navigationBars
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.HorizontalDivider
@@ -20,6 +27,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -30,9 +39,6 @@ import com.example.naplesheart.NaplesHeartTheme
 import com.example.naplesheart.R
 import com.example.naplesheart.data.LocalRecommendationDataProvider
 import com.example.naplesheart.data.Recommendation
-import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.asPaddingValues
-import androidx.compose.foundation.lazy.items
 
 
 @Composable
@@ -64,6 +70,48 @@ fun NaplesHeartListOnlyContent(
                 },
             )
         }
+    }
+}
+
+@Composable
+fun NaplesHeartListAndDetailContent(
+    uiState: NaplesHeartUiState,
+    onRecommendationPressed: (Recommendation) -> Unit,
+    modifier: Modifier = Modifier
+) {
+    val recommendations = uiState.currentCategoryRecommendation
+    Row(
+        modifier = modifier,
+        horizontalArrangement = Arrangement.SpaceEvenly
+    ) {
+        LazyColumn(
+            contentPadding = PaddingValues(
+                top = WindowInsets.statusBars.asPaddingValues().calculateTopPadding(),
+                bottom = WindowInsets.navigationBars.asPaddingValues().calculateBottomPadding()
+            ),
+            modifier = Modifier
+                .weight(1f)
+                .padding(horizontal = dimensionResource(R.dimen.recommendation_list_only_horizontal_padding)),
+            verticalArrangement = Arrangement.spacedBy(
+                dimensionResource(R.dimen.recommendation_list_item_vertical_spacing))
+            ) {
+            items(recommendations, key = { recommendation -> recommendation.id}) { recommendation ->
+                NaplesHeartListItem(
+                    recommendation = recommendation,
+                    selected =  uiState.currentSelectedRecommendation.id == recommendation.id,
+                    onCardClick = {
+                        onRecommendationPressed(recommendation)
+                    }
+                )
+            }
+    }
+        val activity = LocalContext.current as Activity
+        NaplesHeartDetailsScreen(
+            uiState = uiState,
+            onBackPressed = {activity.finish()},
+            isFullScreen = false,
+            modifier = Modifier.weight(1f),
+        )
     }
 }
 
@@ -106,6 +154,7 @@ fun NaplesHeartListItem(
                     color = MaterialTheme.colorScheme.onSurfaceVariant,
                     overflow = TextOverflow.Ellipsis,
                 )
+
             }
         }
 
@@ -120,7 +169,8 @@ fun NaplesHeartLogo(
     Image(
         painter = painterResource(R.drawable.naples_heart_logo),
         contentDescription = stringResource(R.string.naples_heart_logo),
-        modifier = modifier
+        modifier = modifier,
+        colorFilter = ColorFilter.tint(color)
     )
 }
 

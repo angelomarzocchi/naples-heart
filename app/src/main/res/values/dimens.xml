@@ -11,4 +11,18 @@
     <dimen name="list_item_inner_padding">24dp</dimen>
     <dimen name="card_list_vertical_spacing">8dp</dimen>
     <dimen name="topbar_padding_vertical">8dp</dimen>
+    <dimen name="detail_action_button_padding_vertical">4dp</dimen>
+    <dimen name="recommendation_header_content_padding_horizontal">12dp</dimen>
+    <dimen name="recommendation_header_content_padding_vertical">4dp</dimen>
+    <dimen name="detail_card_inner_padding">20dp</dimen>
+    <dimen name="detail_content_padding_top">12dp</dimen>
+    <dimen name="detail_expanded_subject_body_spacing">8dp</dimen>
+    <dimen name="detail_card_divider_padding">4dp</dimen>
+    <dimen name="detail_topbar_back_button_padding_horizontal">24dp</dimen>
+    <dimen name="detail_topbar_padding_bottom">24dp</dimen>
+    <dimen name="detail_card_outer_padding">24dp</dimen>
+    <dimen name="detail_subject_padding_end">40dp</dimen>
+    <dimen name="recommendation_list_only_horizontal_padding">16dp</dimen>
+    <dimen name="detail_card_image_vertical_padding">8dp</dimen>
+    <dimen name="recommendation_list_item_vertical_spacing">8dp</dimen>
 </resources>

@@ -13,11 +13,16 @@ class NaplesHeartViewModel: ViewModel() {
     private val _uiState = MutableStateFlow(NaplesHeartUiState())
     val uiState = _uiState.asStateFlow()
 
+    init {
+        initializeUiState()
+    }
+
     private fun initializeUiState() {
         val recommendations = LocalRecommendationDataProvider.allRecommendation.groupBy { it.recommendationCategory }
         _uiState.value =
             NaplesHeartUiState(
                 recommendations = recommendations,
+                currentRecommendationCategory = RecommendationCategory.Pizza,
                 currentSelectedRecommendation = recommendations[RecommendationCategory.Pizza]?.get(0)
                     ?: LocalRecommendationDataProvider.defaultRecommendation
             )
