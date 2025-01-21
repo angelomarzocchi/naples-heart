@@ -1,8 +1,66 @@
 <resources>
     <string name="app_name">Naples\' Heart</string>
-    <string name="recommendation_title_1">Vincenzo Capuano</string>
-    <string name="recommendation_description_1">Benvenuti nel cuore della tradizione culinaria napoletana, dove l\'arte della pizza incontra l\'eccellenza. La nostra catena di pizzerie è stata fondata da uno dei migliori pizzaioli del mondo, Vincenzo Capuano. Scopri la magia delle nostre pizze autentiche, preparate con passione e ingredienti di prima qualità.</string>
+
+    <string name="recommendation_title_1">Forno Antico al Mare</string>
+    <string name="recommendation_description_1">This pizzeria brings the classic Neapolitan wood-fired oven to the seaside, offering traditional pizzas with fresh seafood toppings.</string>
     <string name="recommendation_location_1">Naples</string>
+
+    <string name="recommendation_title_2">La Margherita Moderna</string>
+    <string name="recommendation_description_2">A contemporary take on the classic, this pizzeria experiments with unique flavor combinations for the Margherita pizza, using artisanal ingredients and modern techniques.</string>
+    <string name="recommendation_location_2">Caserta</string>
+
+    <string name="recommendation_title_3">1800 Napoli</string>
+    <string name="recommendation_description_3">This pizzeria pays homage to Neapolitan history, offering traditional pizzas with a focus on heirloom tomatoes and local, seasonal ingredients, recreating authentic 19th-century flavors.</string>
+    <string name="recommendation_location_3">Naples</string>
+
+    <string name="recommendation_title_4">Crudo e Cotto</string>
+    <string name="recommendation_description_4">This innovative pizzeria focuses on a fusion of raw and cooked ingredients, offering creative pizzas with unexpected flavor pairings like marinated anchovies with roasted figs and prosciutto.</string>
+    <string name="recommendation_location_4">Naples</string>
+
+    <string name="recommendation_title_5">La Sfida dei Maestri</string>
+    <string name="recommendation_description_5">This pizzeria features a rotating menu of pizzas created by renowned pizzaioli from across Naples, showcasing the diversity and creativity of Neapolitan pizza-making.</string>
+    <string name="recommendation_location_5">Avellino</string>
+
+    <string name="recommendation_title_6">Il Velocista</string>
+    <string name="recommendation_description_6">This stylish bar focuses on quick, elegant aperitivi. Expect expertly crafted cocktails, small plates of gourmet finger foods, and a vibrant, energetic atmosphere.</string>
+    <string name="recommendation_location_6">Naples</string>
+
+    <string name="recommendation_title_7">La Terrazza del Vesuvio</string>
+    <string name="recommendation_description_7">Enjoy breathtaking views of Mount Vesuvius while sipping on classic Italian cocktails and nibbling on local cheeses and cured meats. This bar offers a sophisticated and romantic setting for an unforgettable aperitivo.</string>
+    <string name="recommendation_location_7">Naples</string>
+
+    <string name="recommendation_title_8">l Borgo Antico</string>
+    <string name="recommendation_description_8">This hidden gem tucked away in a historic Neapolitan alleyway offers a traditional aperitivo experience. Expect classic cocktails, live music, and a warm, inviting atmosphere.</string>
+    <string name="recommendation_location_8">Caserta</string>
+
+    <string name="recommendation_title_9">La Bottega del Gusto</string>
+    <string name="recommendation_description_9">This bar specializes in artisanal spirits and craft cocktails. Enjoy a unique selection of Italian liqueurs and amari, paired with carefully selected cheeses and charcuterie.</string>
+    <string name="recommendation_location_9">Naples</string>
+
+    <string name="recommendation_title_10">L\'Oasi Urbana</string>
+    <string name="recommendation_description_10">Escape the city bustle at this tranquil oasis. This bar features a lush indoor garden, offering a relaxing setting for enjoying refreshing cocktails and light bites.</string>
+    <string name="recommendation_location_10">Naples</string>
+
+        <string name="recommendation_title_11">Diego Maradona\'s Murales</string>
+        <string name="recommendation_description_11">the mural was painted on a 6-story building in 1990 when Napoli won its second Scudetto thanks in part to the feats of Diego Armando Maradona.</string>
+        <string name="recommendation_location_11">Quartieri Spagnoli</string>
+
+        <string name="recommendation_title_12">Obelisco di San Domenico</string>
+        <string name="recommendation_description_12">The San Domenico spire is a Baroque sculptural work located in Piazza San Domenico Maggiore in Naples, opposite the church of the same name.</string>
+        <string name="recommendation_location_12">Naples</string>
+
+            <string name="recommendation_title_13">Castel Nuovo</string>
+            <string name="recommendation_description_13">Castel Nuovo , often called Maschio Angioino, is a medieval castle located in front of Piazza Municipio and the city hall (Palazzo San Giacomo) in central Naples,</string>
+            <string name="recommendation_location_13">Naples</string>
+
+                <string name="recommendation_title_14">Piazza del Plebiscito</string>
+                <string name="recommendation_description_14">Piazza del Plebiscito (Italian pronunciation: [ˈpjattsa del plebiʃˈʃiːto]; Neapolitan: Chiazza d\'\'o Plebbiscito) is a large public square in central Naples, Italy.</string>
+                <string name="recommendation_location_14">Naples</string>
+
+                <string name="recommendation_title_15">Spaccanapoli</string>
+                <string name="recommendation_description_15">Spaccanapoli is the straight and narrow main street that traverses the old, historic center of the city of Naples, Italy. The name is a popular usage and means, literally, "Naples splitter". The name is derived from the fact that it is very long and from above it seems to divide that part of the city.</string>
+                <string name="recommendation_location_15">Napoli</string>
+
     <string name="pizza_label">Pizza</string>
     <string name="monument_label">Monuments</string>
     <string name="aperitif_label">Aperitif</string>
